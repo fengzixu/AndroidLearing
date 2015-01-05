@@ -1,0 +1,72 @@
+title:anroid开发起手式
+author:xuran
+
+学习了安卓项目创建的基本知识，以及创建项目过程中所遇到的问题。
+
+安卓项目目录的用途：
+src:源文件
+gen:自动生成的目录,即使删掉也会重新生成(R.java)
+assets:存放资源文件的地方
+bin:存放应用程序APK文件。
+libs:引入第三方的jar包
+res:存放资源
+	drawable:放图片资源，根据分辨率的不同会放很多种尺寸的图片资源，以便适配各种手机。
+	layout:布局文件
+	values:
+			strings:字符串资源
+			style:样式
+	raw:音频资源
+	anim:动画资源
+
+
+
+AndroidManifest文件作用：
+APP应用总体的配置文件.
+可以自己增加一些额外的配置信息，比如permission获取手机中相应的权限.
+
+proguard-project，配置apk将要发布的防止反编译的信息
+
+
+
+R.java这个文件会映射到我们res文件夹中各个资源的标识,在引用资源的时候，通常是通过R.java文件和res文件夹下的xml文件的映射来寻找调用的。
+
+
+重要的目录与文件:
+src
+res:layout,drawable,values
+AndroidManifest.xml
+
+
+
+
+
+
+
+
+AndroidManifest文件详解
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.demo.androidprorame1"		//区分不同的应用程序
+    android:versionCode="1"					//内部版本
+    android:versionName="1.0" >				//外部版本
+
+    <uses-sdk
+        android:minSdkVersion="15"				//最低支持的SDK版本
+        android:targetSdkVersion="16" />		//最合适的运行SDK版本
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"			//图标
+        android:label="@string/app_name"				//名字
+        android:theme="@style/AppTheme" >				//主题
+        <activity
+            android:name=".MainActivity"				//可以在应用程序中运行的类
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />		//整个程序运行的第一个activity
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
