@@ -1,0 +1,13 @@
+title:logcat的使用
+author:xuran
+
+一、logcat的使用
+使用log输出信息，有相应的级别：
+log.v
+log.d
+log.i
+log.w
+loh.e
+
+
+可以通过输出日志信息来判定程序的运行情况

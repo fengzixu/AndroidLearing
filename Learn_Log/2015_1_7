@@ -1,0 +1,6 @@
+title:android app 是怎样工作的
+author: xuran
+
+
+任何一个我们看到的窗体都是又窗口布局文件和java代码文件来完成的，他们两个是配合来进行工作的。并且在整个安卓APP项目中的配置文件androidmanifest.xml文件中要对相应的窗体进行注册。
+一个Activity最重要的方法就是oncreate方法，这个方法会在activity创建的时候执行。oncreate方法中的一个setcontentview将会把activity的java代码绑定一个布局视图，让前端和后端都能够联系起来。
