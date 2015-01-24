@@ -16,6 +16,6 @@
         android:layout_alignParentTop="true"
         android:layout_marginRight="107dp"
         android:layout_marginTop="58dp"
-        android:text="打电话" />
+        android:text="跳转" />
 
 </RelativeLayout>

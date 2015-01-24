@@ -27,9 +27,13 @@
             android:label="SecondActivity" >
             <intent-filter>
                 <action android:name="mysecondactivity" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
     </application>
-<uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
+
+    <uses-permission android:name="android.permission.CALL_PHONE" >
+    </uses-permission>
+
 </manifest>

@@ -30,9 +30,7 @@ public class MainActivity extends Activity {
 				
 				Intent m_intent = new Intent();
 				
-				m_intent.setAction(m_intent.ACTION_CALL);
-				
-				m_intent.setData(Uri.parse("tel:13674878290"));
+				m_intent.setAction("mysecondactivity");
 				
 				startActivity(m_intent);
 			}
