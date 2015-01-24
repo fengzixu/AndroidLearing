@@ -1,0 +1,9 @@
+title:intentfilter的详解
+author:xuran
+
+
+
+Intentfilter意味意图筛选器。所谓意图，我自己的理解就是想要干什么。做的事情不是在自己的activity中完成的，而是从一个activity到另外一个activity。所以，活动的跳转，还有活动的传值都可以用Intent来实现，同时，也可以和intentfilter配合来实现。
+
+
+首先

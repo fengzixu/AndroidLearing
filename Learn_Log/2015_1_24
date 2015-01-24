@@ -1,0 +1,22 @@
+title:startactivity都做了什么,IntentFilter
+author:xuran
+
+
+startactivity（）的函数内部，实际上也是调用了startactivityforresult。他和正常调用forresult这个函数的需求不同，在startactivity函数里面调用的forresult方法传递的发送码是-1，也就是说，如果startactivityforresult的发送码是-1的话，那么就不会返回值。
+
+
+在执行不同的activity切换的时候，除了用intent直接指定跳转的起点和终点之外，还有一种方法，就是利用intentfilter里面的action，自己为某一个activity定义一个Intentfilter并且指定aciton和catgrary，在执行跳转的时候，可以由setaction来设置相应的aciton,从而在传递intent的时候找到和这个action相关的activity跳转过去。
+
+
+在相应的IntentFilter里面可以设置很多属性，比如action的name，在跳转到本activity的时候，就可以再另一个activity里面通过setaction设置动作的名称来清单文件中查找和这个action name相符合的活动跳转过去。也可以在传递数据的时候，使用data的格式，data数据的格式通常都是Uri的格式，可以通过Uri.Prase来装载一些数据，准备发送。在接受方的activity中，可以为intenfilter指定一个data的标签，并且指定scheme这个属性，来确定这个活动所要接收的数据前缀，表明，只要传送过来的数据是这个前缀的话才会被接收。所以，activity的跳转，通过action来实现的话，会检查action name看是否匹配，如果指定了scheme属性的话，在接收数据的时候，会检查所接收数据的前缀来决定是否接收。
+
+这里我出现了一个小问题，在利用data传递数据的时候，因为activity的跳转，如果利用了intenfilter的形式，那么他在跳转的时候，就会根据代码中操纵的intentfilter的属性去查询我要跳转的那个activity在清单文件中intentfilter的信息。数据的接收者如果没有指定data的scheme属性，或者说其他和我指定的intentfilter中的元素属性不符合的话，那么他会拒绝一切的uri类型的数据，甚至会拒绝跳转。如果检查过程中任意一项没有得到吻合，都会出现找不到activity的错误。
+intentfilter里面的所有元素的属性，在检查的时候，都是与的关系，也就是说，都要同时成立符合，才能够正确跳转。
+
+
+
+
+
+
+
+
