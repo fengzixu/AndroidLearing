@@ -1,0 +1,34 @@
+title:configurationchange,activity任务栈
+author:徐冉
+
+在activity进行横竖屏幕切换，改变手机系统语言，手机输入法的时候，对整个手机的设置都会有一些相应的改变，这些改变就是通过调用configurationchange.
+
+在activity类中进行重载之后，如果在通过屏幕切换等等来调用上面的函数的时候，需要现在manifest文件内进行配置.在对应的activity的标签内，加上configchange的属性，并且指定值为orientation和screensize。这样在屏幕变换的时候，就会去调用，我们已经重写的configurationchange函数。这样做的原因就是，在一切横竖屏幕切换等等，activity里面的东西需要重新改变的时候，不再重复activity的生命周期，而执行这个函数，这就为恢复一些具有很多复杂对象的activity有所帮助。
+
+
+
+
+ 什么是任务：
+ task就是多个activity按照一定的顺序组成的业务逻辑。用户看到的永远都是任务栈最上层的activity。同一个任务当中有很多activity进程组成，这些activity所得到的taskid都是相同的。
+
+ 一般来说，任务的开始和结束都是从home开始的我进入一个app，进行了很多次acticity的切换，home，然后再启动一个其他的app，这个APP就是另一个任务。
+
+ 在清单文件中，有一些对activity相关的任务设置。
+ allowtaskreparenting允许任务重定向
+ alwaysretaintaskstate保留任务状态
+ nohistory设置为true的时候，按下home键，进程不会在后台保留
+
+
+
+
+ lunchmode启动模式
+ singleTop,当一个activity不在任务栈顶端的时候，就继续创建这个activity的实例，如果，这个activity此时在栈顶，那么就不会在创建新的实例，会触发Onnewintent.
+
+ singletask:这个activity只能在本任务栈中存在一次，在创建第二次的时候，会把这个activity上面的所有activity都销毁掉,因为栈是有先后顺序的，让它到栈顶。
+
+ singleinstance：创建此activity在一个独立的任务栈，这个任务栈里面只有这一个activity,以后不在这个任务栈中创建相同的activity。
+
+如果有多个任务栈的时候，在出栈的时候，从当前栈开始，退出当前栈所有的activity之后，再去下一个栈进行退栈操作。
+
+
+exported:允许其他进程使用这个activity
