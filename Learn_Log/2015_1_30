@@ -1,0 +1,53 @@
+title:UI控件的学习
+author:徐冉
+
+对于UI来说，也是一个类，这个类继承于View类，所有的界面组件的类都继承于View类。
+
+UI一共有两个部分：UI的呈现(布局)，UI的事件
+
+UI组件的2+1法则：UI的组件是如何呈现出来的+这些组件是放在哪里的+界面的事件机制
+ViewGroup就是容器控件，自己本身也是控件，也可以容纳其他的控件。
+
+基本上每一个程序，都有三个部分非常重要，view ,window activity.我们所看到的一个应用，activity是充当幕后的控制作用，view控件是我们实际上能够看到的界面，按钮等等，而view是嵌入在window上面的。类似setcontentview等等的方法，最终都是通过调用window里面的同名方法来实现的。
+
+windows是一个抽象类，具体实现这个类的是Phonewindow类。里面有一个decorview，我们写应用程序的控件都是嵌入在这个decorview上面的。
+
+所有的控件在我们的一个activity中，都会被组织成一个控件树，这个控件树的根节点必须是一个容器类控件，才能够去包容下其余的控件。其实，系统已经为我们的每一个程序提供了一个默认的容器类组件，是framelayout.
+
+
+
+
+利用代码，动态布局，动态添加控件：
+protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        
+        //为这个类创建一个线性布局
+        LinearLayout m_linerlayout = new LinearLayout(this);
+        
+        //为这个布局创建参数
+        m_linerlayout.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+        
+        //创建一个button
+        Button m_button = new Button(this);
+        
+        //设置button的属性
+        m_button.setText("xuran");
+        m_button.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT));
+        
+        //将button添加到布局中来
+        m_linerlayout.addView(m_button);
+        
+        //加载这个布局
+        setContentView(m_linerlayout);
+    }
+
+
+
+自定义继承view类，自己画控件
+一个控件如果是在framelayout上面的话，那么这个控件是铺满这个布局的.
+
+因为我们知道，所有的控件都是这个控件所在类的一个实例化对象。所以说，如果我们想自己定义一个属于我们自己的控件的时候，就必须要自己创建一个这个控件类。
+在控件类里面定义完成之后，就可以像使用普通控件一样，使用我们自定义的控件，只要实例化一个对象，就可以利用setcontentview来进行显示。
+
+如果要为这个控件设立点击事件，一种方法，就像我们之前为其他标准控件设立监听事件的方法一样。重新实现一下onclicklistener接口即可。

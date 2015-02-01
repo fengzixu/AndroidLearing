@@ -1,0 +1,16 @@
+title:android事件机制
+author:xuran
+
+1.keyevent:和手机中实体按键有关的事件
+2.touchevent:拖动，多点触控
+3.trackballevent：轨迹球
+
+
+一般来说，对于android控件里面的一些点击事件来说，通常有两种办法来实现这些控件的响应机制：
+1.重新实现onclicklistener接口，也就是设置事件监听器(外部)
+2.重载view类中一些处理事件的函数（内部）
+
+
+
+
+ 
