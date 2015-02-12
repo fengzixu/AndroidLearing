@@ -1,0 +1,20 @@
+title:textview控件的使用
+author:xuran
+
+textview控件常常在xml文件内部进行设置，其实xml文件的内容也可以看做是一个类。如果在Java代码中，也可以通过一些API来实现和xml文件设置相同的效果。可见其实xml文件内也是通过系统的某些机制去调用响应的API来完成XML文件中所写的一些设置。
+
+如果textview里面的内容很多，但是又不想多行显示，可以设置省略号的位置，并且还可以给文字设置跑马灯。通过ellipize来设置省略号位置或者跑马灯，然后在利用marqueerepeatlimit来设置跑马灯的显示限制。
+
+
+使用drawable控件的时候，必须要设置bounds.
+
+
+在利用代码动态实现textview控件的时候,可以把控件的内容显示成html网页的形式。利用fromhtml的函数，传递的参数就是html的内容.但是如果html的标签内有src image的时候，android为了防止网速慢等等的因素，造成这里的图片加载不顺利,会默认使用一个系统提供的图片来占位。
+
+为了能够正常实现图片，就要使用这个函数的重载形式.可以传递一个 imagegetter的对象, 这个对象其实是一个接口，里面有个getdrawable的方法，如果，html的内容中有Image的标签存在，将会自动利用imagegetter这个对象来处理，返回一个drawable对象。
+
+当然，如果我们想自定义一些标签，并且操作他的时候，由于是未知的html标签，所以就要使用taghandler,其实原理和imagehandler都是一样的。
+
+
+
+

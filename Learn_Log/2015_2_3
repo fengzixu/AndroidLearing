@@ -1,0 +1,32 @@
+title: canvas画图, drawable画图
+author: xuran
+
+利用canvas画图的时候，一般都是利用canvas的对象来调用响应的API。还有几个比较特殊的函数，比如，调整画布的大小，位置，角度等等，这些都会用到一个martix的对象来进行操作。
+
+但是对于Martix的调整，一次似乎只能做一次更改，当我同时改变大小又改变角度的时候，就会出现新的变化覆盖了旧的变化.
+
+
+save 和 restore：
+//先画一个矩形
+		canvas.drawRect(30, 50, 140, 140, m_paint);
+		
+		//保存上述的画布状态
+		canvas.save();
+		
+		//旋转画布
+		canvas.rotate(30.0f);
+	
+		//在旋转状态下画一个矩形
+		m_paint.setColor(Color.GREEN);
+		canvas.drawRect(60, 100, 250, 250, m_paint);
+		
+		//恢复画布状态
+		canvas.restore();
+		
+		
+		//在保存以前的画布状态下，再画图形。
+		canvas.drawRect(20, 20, 30, 40, m_paint);
+
+
+
+

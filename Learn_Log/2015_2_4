@@ -1,0 +1,7 @@
+title:9-patch图片的制作
+author:xuran
+
+
+在放一些button控件的时候，如果控件上的textview长度过长，那么这些文字很可能就到了button图片的外面，这个时候，就要把button的图片做成9-patch格式，让图片根据内容的多少来拉伸，制作9-patch不仅仅可以指定拉伸区域，还可以指定button内textview的显示区域。
+
+
