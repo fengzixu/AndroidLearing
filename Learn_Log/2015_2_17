@@ -1,0 +1,41 @@
+title:spinner
+author:xuran
+
+
+很多控件的显示， 都需要一些相应的数据来辅助。而数据的来源是多种多样的，所以，很自然我们处理数据，显示数据，把数据绑定到控件上的方式也就是多种多样的。
+
+但是，我们能够想用一种中间的转换结构，把各种复杂的数据格式，都最终变成统一的一种数据格式，这样一来，我们就能够用同意统一的方法来处理数据，这种中间结构就是adapter适配器。
+所有的adapter都是通过重新实现adapter-android-.widget的接口，最常用的一个是List,另外一个是spinner.而一切adapter的父类都是一个叫做baseadapter的类，它实现了上面的两种接口。
+
+
+总结起来：
+
+Adapter是一个接口。有两个重新实现了这个接口的新接口：ListAdapter，SpinnerAdapter。
+这两个接口的实现类，都是统一的一个BaseAdapter。在BaseAdapter下面有两个子类，一个是ArrayAdapter，还有一个是CursonAdapter，分别是数组的，游标的（和数据库有关），最后还都有一个simpleAdapter.
+
+想让数据能够成功的绑定到界面的控件上，需要一下就几个步骤:
+
+1. 建立好数据源，无论是数据库的还是数组形式的
+
+2. 建立好adapter类
+
+3. 建立adapter与数据源的联系
+
+4. 将adapter绑定到界面的控件上
+
+
+
+一般来说，默认的adapter只能处理系统定义的类型的数据，比如我们自己开发一个通讯录的程序，然后要把联系人显示在spinner上面，联系人有头像，电话号码，住址等等信息。根据上面将数据显示到控件上面的4部，我们可以知道，默认的方式是无法解析我们自己定义的这种Item的数据类型的。所以我们要自己diy.
+
+因为要按照我们自定义的方式来，数据源的类型要定义，处理数据的adapter要重新定义，显示数据的textview的布局文件要重新定义。
+
+
+
+首先要创建一个类，这个类就是我们通讯录中每一个对象各种信息的描述。
+其次，数据源大致分为两种类型，一种是list，一种是数据库类型的数据，我们虽然可以把我们自定义的数据类型的数据装入到arrylist中，但是，默认的adapter可能解析不了这种数据，所以，我们就要自己定义一个adapter，这样也可以来了解adapter是怎么工作的。
+最后，如果我们要将解析好的数据按照一定的格式显示上去，我们知道每一个item都是一个textview，在源码中，也是通过xml来制定了textview的显示样式，所以，我们应该还要自己定义一个显示textview的样式。
+
+ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,myitems);
+在建立adapter的时候，就会指定的。
+
+凡是和adapter相关的view，它们的基类都是adapterview。

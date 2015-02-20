@@ -1,0 +1,15 @@
+title:button控件,togglebutton控件
+author:xuran
+
+对于button的控件背景来说，可以直接利用background的属性来设置图片，但是因这样过于死板，不能因用户的交互而变化显示，所以我们用到了一种selector的xml文件，他只有一个item标签，里面可以根据不同的情况来改变button或者是Listview的样式。如果有多条，就是针对不同的情况，类似于if else的逻辑关系
+
+
+在进行button的事件操作的时候，我们会发现，无论是onclick还是onlongclick，都是属于ontouchevent。那么我们在选择长按动作的时候，由于也采用了按下这个动作，那么onclick就也会调用。那么如何让程序只调用那个最合适的方法呢，因为在实现Onclicklistener这个匿名内部类的时候，都会调用一个叫做Onclick的成员方法，当这个成员方法放回true的时候，就说明这个点击事件已经被处理了，不应该再向下传递这个事件了，当返回false就证明，这个事件还需要向下传递。
+
+
+
+togglebutton也是Button的一种，他的事件也可以通过setonclicklistener来进行实现。
+在按钮切换的过程中，我们可以改变两种按钮状态的样式.tigglebutton和普通Button不同的是，他有一个不同的事件，就是onchechedchanged，因为这个控件是在两种条件下切换，所以这个事件用的更多一点。
+
+
+radiobutton中的按钮，都是图片的形式，这些图片可以换成其他的，还可以改变图片的位置。
