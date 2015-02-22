@@ -1,0 +1,22 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="今天我很高兴,我的电话是 15773275610,邮箱是 296597641@qq.com, www.baidu.com"
+        android:textColor="#893746"
+        android:autoLink="all"
+        android:hint="no data"
+        android:textSize="12sp"
+        android:singleLine="false"
+        android:drawableLeft="@drawable/button" 
+        android:drawablePadding="15dp"
+        android:textColorLink="#FF6452"
+        android:id="@+id/text1"
+        />
+
+</RelativeLayout>

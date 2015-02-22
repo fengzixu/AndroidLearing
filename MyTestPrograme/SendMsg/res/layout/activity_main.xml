@@ -1,0 +1,19 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <Button
+        android:gravity="center"
+        android:id="@+id/button1"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="138dp"
+        android:background="@drawable/layout_shape"
+        android:text="一键发送" />
+
+</RelativeLayout>

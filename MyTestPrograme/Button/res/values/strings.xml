@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Button</string>
+    <string name="hello_world">Hello world!</string>
+	<string-array name = "spinner">
+	    <item >hello</item>
+	    <item>lala</item>
+	</string-array>
+</resources>

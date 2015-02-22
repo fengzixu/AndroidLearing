@@ -1,0 +1,9 @@
+title:textfield
+author:xuran
+
+ android:inputMethod是指定了点击控件之后弹出的输入法
+
+ 可以对edittext控件设置setOnEditorActionListener监听器，在按下回车键的时候，会回调里面的一个函数，来执行响应的操作
+
+
+  AutoCompleteTextView这个控件，可以实现自动补全功能，但是需要数据源和adapter的支持
