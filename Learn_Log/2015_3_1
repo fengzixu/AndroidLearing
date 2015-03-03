@@ -1,0 +1,10 @@
+title:scrollview,slidingdrawer,tabhost,tabwidget
+author:xuran
+
+1.只能有一个子元素
+2.本身必须放在根元素下面
+
+任何一个view，都不能缺少layout_width, height这两个属性的指定
+
+
+对于tabhost来说，是一个大的范围。里面有两种成分，tabwidget,framelayout.这两个成分又是被装在一个线性布局中的。

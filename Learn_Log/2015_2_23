@@ -1,0 +1,27 @@
+title:listview
+author:xuran
+
+
+listview也是一个用于显示数据的控件，控件上面的数据，可以在xml文件中利用字符串数组来指定，也可以通过adapter来进行动态生成。
+
+
+listview上面显示的数据，一般来说都是adapter绑定上去的，所以如果你想更新数据的时候，便可以对adapter绑定的数据源进行修改，然后让adapter重新绑定到控件上面去，即可完成更新。另外，官网上对于adapter还提供了一个专门的方法，用来侦测数据源的更改，以便及时更新listview上面的信息adapter.notifyDataSetChanged().
+
+
+我们还可以用另外一种方法来实现listview显示数据,就是让activity类继承于ListActivity，这个类里面是自己包含了一个listview的，不用我们自己再进行创建。通过文档中显示我们就可以知道，Listactivity中里面不仅包含了一个默认的listview，还包含了一个默认的activity的布局文件.
+
+ListActivity has a default layout that consists of a single, full-screen list in the center of the screen. However, if you desire, you can customize the screen layout by setting your own view layout with setContentView() in onCreate(). To do this, your own view MUST contain a ListView object with the id "@android:id/list" (or list if it's in code)
+
+
+文档中说的非常清楚，默认的布局文件是全屏的，并且listview将会显示在屏幕中间，如果你想加入自己定义的布局文件的话，你的listview控件的ID必须是android:id/list才行。然后用setcontentview来指定相应的布局文件。
+
+
+adapter本身不是被观察者，adapter里面有一个被观察者Datasetobeservable.
+
+adapter中的notifyDataSetChanged方法，能够动态的让Listview更新数据,实际上是采取了观察者的设计模式，最终在被观察者中调用notifyDataSetChanged方法，依次向上追溯，最终发现在obeservable中调用了onchanged方法。
+
+listactivity中不但包含了默认的listview和布局文件，还帮助我们重载了很多listview中的事件函数。
+
+
+
+cursor也是一种数据集，它是通过查询等操作来获得数据.如查询通讯录中的内容，可以就会设计到contentprovider.cursor数据集使用的adapter也是不同的，
