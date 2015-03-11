@@ -8,3 +8,5 @@ author:xuran
 
 
 对于tabhost来说，是一个大的范围。里面有两种成分，tabwidget,framelayout.这两个成分又是被装在一个线性布局中的。
+
+如果想让一个图片的背景变成的透明的话，可以通过设置background,在颜色代码前面加上00即可

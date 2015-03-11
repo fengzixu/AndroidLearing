@@ -1,0 +1,4 @@
+title:galleryview
+author:xuran
+
+gallery也是一个adapterview，主要用来展示一些内容，类似于横向的scrollview.它没有特定为它准备的activity,类似tabhost,listview，它需要自己按照原来adapter控件的几个步骤进行书写。

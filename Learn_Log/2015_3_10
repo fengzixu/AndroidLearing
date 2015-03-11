@@ -1,0 +1,24 @@
+title:layout
+author:xuran
+
+
+
+父子控件的layout属性不能相互依赖
+layout_weight是比重属性.如果在一个布局中有其他不拉伸的空间，那么其余所占的比重，都是在除不拉伸空间以外的地方来计算拉伸的比重。
+layout_weight一般用于设置控件在布局中所占的宽度
+
+
+android:gravity　属性是对该view中内容的限定．比如一个button 上面的text. 你可以设置该text 相对于view的靠左，靠右等位置．
+
+android:layoutut_gravity是用来设置该view相对与父view 的位置．比如一个button 在linearlayout里，你想把该button放在linearlayout里靠左、靠右等位置就可以通过该属性设置． 
+在线性布局中，横向是不允许控件重叠的.
+
+
+两个控件的间隔叫margin,一个控件的内容，和这个控件本身的间隔叫做padding.
+
+布局的嵌套最多不要超过5层.
+
+
+framelayout一般来说，只能放置一个子元素，但是放多个元素的话，也不会报错。
+
+
