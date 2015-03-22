@@ -1,0 +1,42 @@
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    		 android:layout_width="match_parent"
+    		 android:layout_height="match_parent" 
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+        
+        <TextView android:id="@+id/title"
+            	  android:text="AndroidUi项目作业"
+            	  android:layout_width="match_parent"
+            	  android:layout_height="wrap_content"
+            	  android:gravity="center"
+            	  android:textSize="20sp"
+            	  android:layout_marginTop="20dp"
+            	 />
+        
+        <Button android:id="@+id/SpinnerPrograme"
+            	android:layout_width="match_parent"
+            	android:layout_height="wrap_content"
+            	android:text="三级联动Demo"
+            	android:layout_gravity="center"
+            	android:layout_marginTop="20dp"
+            	android:textColor="#8B8682"
+            	android:background="@drawable/shape_button"
+            	android:onClick="ShowSpinner"
+            />
+        
+        <Button android:id="@+id/SeekBar"
+            	android:layout_width="match_parent"
+            	android:layout_height="wrap_content"
+            	android:text="SeekBar Demo"
+            	android:layout_gravity="center"
+            	android:layout_marginTop="20dp"
+            	android:textColor="#8B8682"
+            	android:background="@drawable/shape_button"
+            	android:onClick="ShowSeekBar"/>
+    </LinearLayout>
+    
+</ScrollView>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="1"
+    android:shrinkColumns="2" >
+
+    <TableRow android:layout_marginTop="30dp" >
+
+        <TextView android:text="UserName: " android:gravity="right"/>
+
+        <EditText
+            android:layout_marginLeft="5dp"
+            android:hint="请输入用户名 " 
+            android:singleLine="true"/>
+
+        <TextView
+            android:text="序列长度不超过3"
+            android:textColor="#FF00"
+            android:textSize="10sp" />
+    </TableRow>
+
+    <TableRow android:layout_marginTop="30dp" >
+
+        <TextView android:text="PassWord: " android:gravity="right"/>
+
+        <EditText
+            android:layout_marginLeft="10dp"
+            android:hint="请输入密码 " >
+        </EditText>
+
+        <TextView
+            android:text="only numbers"
+            android:textSize="10sp"
+            android:textColor="#FF00" />
+    </TableRow>
+
+    <TableRow android:layout_marginTop="30dp" >
+
+        <TextView android:text="E-mail: " android:gravity="right"  />
+
+        <EditText
+            android:layout_marginLeft="10dp"
+            android:hint="请输入邮箱 " >
+        </EditText>
+
+        <TextView
+            android:text="xxx@xx.com"
+             android:textSize="10sp"
+            android:textColor="#FF00" />
+    </TableRow>
+
+    <TableRow android:layout_marginTop="30dp" >
+
+        <TextView
+           
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="验证码:" android:gravity="right"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/editText1"
+                android:hint="输入验证码"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:gravity="left"
+                 >
+            </EditText>
+            
+            <TextView
+            android:text="换一换"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FF00" 
+             android:textSize="10sp"
+            android:layout_marginLeft="10dp"
+            />
+        </LinearLayout>
+        
+
+    </TableRow>
+
+</TableLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Spinner</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="province">省份</string>
+    <string name="city">城市</string>
+    <string name="quyu">区域</string>
+
+    <string-array name="province_item">
+        <item>内蒙古</item>
+        <item>湖南</item>
+    </string-array>
+    <string-array name="city_item1">
+        <item>赤峰</item>
+        <item>呼和浩特</item>
+        <item>二连浩特</item>
+    </string-array>
+    <string-array name="city_item2">
+        <item>长沙</item>
+        <item>湘潭</item>
+        <item>株洲</item>
+    </string-array>
+    <string-array name="quyu_item21">
+        <item>雨花</item>
+        <item>五一广场</item>
+        <item>长沙3</item>
+        <item>长沙4</item>
+    </string-array>
+ 
+    <string-array name="quyu_item22">
+        <item>湘潭1</item>
+        <item>湘潭2</item>
+        <item>湘潭3</item>
+        <item>湘潭4</item>
+    </string-array>
+    
+    <string-array name="quyu_item23">
+        <item>株洲1</item>
+        <item>株洲2</item>
+        <item>株洲3</item>
+        <item>株洲4</item>
+    </string-array>
+    <string-array name="quyu_item11">
+        <item>元宝山区</item>
+        <item>红山区</item>
+        <item>松山区</item>
+        <item>神马区</item>
+    </string-array>
+    <string-array name="quyu_item12">
+        <item>呼和浩特1</item>
+        <item>呼和浩特2</item>
+        <item>呼和浩特3</item>
+        <item>呼和浩特4</item>
+    </string-array>
+    <string-array name="quyu_item13">
+        <item>二连浩特1</item>
+        <item>二连浩特2</item>
+        <item>二连浩特3</item>
+        <item>二连浩特4</item>
+    </string-array>
+
+</resources>
