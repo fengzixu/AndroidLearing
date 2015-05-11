@@ -1,0 +1,16 @@
+package com.demo.activity;
+
+import com.example.androiddemo.R;
+
+import android.os.Bundle;
+
+public class SecondActivity extends BaseActivity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		//HandleActivity.AddActivity(this);
+		setContentView(R.layout.layout_secondactivity);
+	}
+}

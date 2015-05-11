@@ -1,0 +1,18 @@
+title: dialog
+author:xuran
+
+
+dialog在显示的时候，设置单选列表和setmessage不能重合。
+
+dialog的show会包括create函数。
+
+
+dialog的创建一共有4个步骤，其实dialog和activity有很多相似之处,activity中有的东西它里面很多也会有。
+
+1.创建一个builder
+2.通过create函数来创建一个dialog的实例
+3.通过一系列set函数来设置dialog的各项参数
+4.show出来
+
+在自定义dialog的样式的时候，也是通过自己定义一个布局文件来设定dialog的具体样式，之后在利用layoutinflater来进行操作，把layout压成视图。
+

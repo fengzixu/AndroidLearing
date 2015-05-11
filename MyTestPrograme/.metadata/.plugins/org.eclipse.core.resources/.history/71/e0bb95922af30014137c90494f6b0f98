@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <PreferenceCategory android:title="无线和网络" android:key="key_wifi_internet">
+        <SwitchPreference android:key="wifi_switch"
+            				  android:title="无线网络"
+            				  android:switchTextOn="开"
+            				  android:switchTextOff="关"
+            				  android:summaryOn="wifi打开"
+            				  android:summaryOff="wifi关闭"
+            				  android:disableDependentsState="false"
+            				  android:icon="@android:drawable/ic_dialog_email"
+            				  
+            />
+        <CheckBoxPreference android:icon="@android:drawable/ic_dialog_info"
+            				    android:title="蓝牙"
+            				    android:key="bluetooth_checkbox"
+            				    android:summaryOn="蓝牙开启"
+            				    android:summaryOff="蓝牙关闭"
+            				    android:disableDependentsState="false"
+            				    
+            />
+        
+    </PreferenceCategory>
+	<PreferenceCategory android:key="key_voice" android:title="设备">
+	    <PreferenceScreen android:key="voice" android:title="声音" android:icon="@android:drawable/ic_media_play">
+			<RingtonePreference android:key="voice_length" android:title="音量"/>	    
+	    </PreferenceScreen>
+	</PreferenceCategory>
+</PreferenceScreen>

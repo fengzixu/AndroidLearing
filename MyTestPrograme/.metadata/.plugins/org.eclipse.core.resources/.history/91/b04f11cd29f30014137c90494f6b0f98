@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <PreferenceCategory android:title="无线和网络" android:key="key_wifi_internet">
+        <SwitchPreference android:key="wifi_switch"
+            				  android:title="无线网络"
+            				  android:switchTextOn="开"
+            				  android:switchTextOff="关"
+            				  android:summaryOn="wifi打开"
+            				  android:summaryOff="wifi关闭"
+            				  android:disableDependentsState="false"
+            				  android:icon="@android:drawable/ic_dialog_email"
+            />
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,18 @@
+title:开场动画的设计，动态添加控件
+author:xuran
+
+
+1.单独设置一个activity，延时跳转
+new handler.postdelayed(延时作用)
+(加载activity界面可以用setcontentview,或者是在代码中setcontentview添加好布局，动态添加上面的view控件)
+
+2.不设置xml布局文件，在代码中动态生成，如果不指定布局的宽和高的参数的话，会自适应来显示
+
+3.如果只是显示图片，那么直接定义imageview就可以，不需要layout，直接setcontentview（imageview）
+
+
+
+实现双击back键退出程序: timer(),定时器，如果两秒之内没有退出，那么吧状态值变回原来的样子。
+
+第一次点击的时候，改变状态值，如果利用定时器，如果规定时间内点击的话，就把值变为原来的值。只有逻辑检测到值变成假之后，才会退出。
+

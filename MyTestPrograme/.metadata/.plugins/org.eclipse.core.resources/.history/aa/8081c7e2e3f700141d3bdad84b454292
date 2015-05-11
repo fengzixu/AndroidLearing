@@ -1,0 +1,77 @@
+package com.demo.Data;
+
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+
+import com.example.androiddemo.R;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.EditText;
+
+public class FileSave extends Activity {
+
+	private FileOutputStream mFileOutputStream;
+	private OutputStreamWriter mOutputStreamWriter;
+	private BufferedWriter mWriter;
+	private EditText mname;
+	private EditText mpasswd;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.layout_save_login);
+		// 获取控件
+
+		mname = (EditText) findViewById(R.id.savelogin_name_editText1);
+		mpasswd = (EditText) findViewById(R.id.savelogin_passwd_editText2);
+
+	}
+
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		String name = mname.getText().toString();
+		String passwd = mpasswd.getText().toString();
+		try {
+
+			// 打开文件获取流对象
+			mFileOutputStream = openFileOutput("data", MODE_APPEND);
+
+			// 利用转换流，将字节流转换为字符流
+			mOutputStreamWriter = new OutputStreamWriter(mFileOutputStream);
+
+			// 再次包装成bufferwriter
+
+			mWriter = new BufferedWriter(mOutputStreamWriter);
+
+			try {
+				mWriter.write(name);
+				mWriter.write(passwd);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+
+			if (mWriter != null) {
+
+				try {
+					mWriter.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+
+	}
+}

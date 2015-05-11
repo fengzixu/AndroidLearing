@@ -1,0 +1,52 @@
+package com.demo.Data;
+
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+
+import com.example.androiddemo.R;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.EditText;
+
+public class FileSave extends Activity {
+
+	private FileOutputStream mFileOutputStream;
+	private OutputStreamWriter mOutputStreamWriter;
+	private BufferedWriter mWriter;
+	private EditText mname;
+	private EditText mpasswd;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.layout_save_login);
+		// »ñÈ¡¿Ø¼þ
+
+		mname = (EditText) findViewById(R.id.savelogin_name_editText1);
+		mpasswd = (EditText) findViewById(R.id.savelogin_passwd_editText2);
+
+	}
+
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		String name = mname.getText().toString();
+		String passwd = mpasswd.getText().toString();
+		
+
+		try {
+			mWriter.write(name);
+			mWriter.write(passwd);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+}

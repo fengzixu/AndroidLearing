@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/first_start_activity_button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="44dp"
+        android:onClick="first"
+        android:text="first" />
+
+    <Button
+        android:id="@+id/second_start_activity_button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/first_start_activity_button1"
+        android:layout_below="@+id/first_start_activity_button1"
+        android:layout_marginTop="42dp"
+        android:onClick="second"
+        android:text="second" />
+
+</RelativeLayout>

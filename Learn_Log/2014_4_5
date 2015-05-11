@@ -1,0 +1,32 @@
+title: service
+author: xuran
+
+service是android四大组件之一，一些耗时较长的操作，都可以用service来做。它在后台运行，不能和用户进行交互。默认情况下，服务运行于进程中的主线程当中。	
+
+启动服务之后，即使按下home键也一样会运行
+启动服务之后，即使按下Back键也一样会运行，但是如果服务所在的进程被干掉之后，它本身也会消失。
+
+服务不是一个线程，也不是一个进程，他是和所在进程绑定在一起的。
+
+
+按照启动方式来分：startedservice, bindservice
+按照服务性质来分类：local service , remote service
+
+
+基本上，实现一个服务并且让它运行，有以下几个比较重要的步骤：
+
+1.继承service类，重新实现一个自己的类
+2.在清单文件中注册自己的服务
+3.可以调用startservice来启动自己的服务
+4.可以调用stopservece来停止自己服务的运行。
+
+
+在 starcommand中即使执行了stopservice函数，也一样会执行完这个函数的函数体之后在调用stopservice。
+
+
+普通的service可能需要自己利用多线程的技术来实现service的启动操作，避免阻塞。但是还有一种服务是intentservice，它里面自动为我们提供了一种异步处理机制，使得service的运行不会阻塞。这有点像windos中套接字编程中的异步套接字编程，提供了一种异步处理机制，让有可能租塞的函数或者操作立即返回，而不是一直在那里等待。而且在服务运行结束之后，还会自动stop它。
+
+intetservice是在内部新开了一个Handlerthread的线程来收发消息，在处理完成之后，kill掉这个线程，并关掉服务。
+
+
+binder是负责进程见通讯的一个驱动。	

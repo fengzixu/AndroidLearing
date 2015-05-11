@@ -1,0 +1,28 @@
+package com.demo.activity;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+
+public class BaseActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		Log.i("xuran", getClass().getSimpleName());
+	}
+	
+	public void first(View view){
+		Intent mIntent = new Intent();
+		mIntent.setClass(this, FirstActivity.class);
+		startActivity(mIntent);
+	}
+	public void second(View view){
+		Intent mIntent = new Intent();
+		mIntent.setClass(this, SecondActivity.class);
+		startActivity(mIntent);
+	}
+}

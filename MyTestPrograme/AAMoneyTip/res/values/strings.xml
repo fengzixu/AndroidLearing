@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AAMoneyTip</string>
+    <string name="hello_world">Hello world!</string>
+	<string name="header_main">AA消费助手</string>
+</resources>

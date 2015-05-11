@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AndroidDemo</string>
+    <string name="hello_world">Hello world!</string>
+	<string-array name = "zhendong">
+	    <item >振动</item>
+	    <item >响铃且振动</item>
+	    <item >静音</item>
+	</string-array>
+</resources>

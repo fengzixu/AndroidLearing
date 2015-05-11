@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/start_bind_button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/start_service_button1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="start_bind_service" />
+
+    <Button
+        android:id="@+id/start_service_button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="35dp"
+        android:text="start_service" />
+
+    <Button
+        android:id="@+id/stop_service_button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/start_service_button1"
+        android:text="stop_service" />
+
+    <Button
+        android:id="@+id/stop_bindbutton2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/start_bind_button1"
+        android:text="stop_bind_service" />
+
+    <Button
+        android:id="@+id/intent_service_button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/stop_bindbutton2"
+        android:text="IntentService" />
+
+        <Button
+            android:id="@+id/start_second_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/intent_service_button1"
+            android:layout_marginTop="41dp"
+            android:onClick="Start_activity_bind"
+            android:text="start_second_activity" />
+
+</RelativeLayout>
