@@ -1,0 +1,36 @@
+package com.demo.broadcast.test;
+
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+
+import com.demo.activity.BaseActivity;
+import com.example.androiddemo.R;
+
+public class LoginActivity extends BaseActivity {
+
+	private EditText name;
+	private EditText passwd;
+	private Button login;
+	private Button cancel;
+	
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.layout_save_login);
+		
+		name = (EditText)findViewById(R.id.savelogin_name_editText1);
+		passwd = (EditText)findViewById(R.id.savelogin_passwd_editText2);
+		login = (Button)findViewById(R.id.savelogin_passwd_button1)
+		
+		
+	}
+	
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+	}
+}

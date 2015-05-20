@@ -1,0 +1,150 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="AndroidDemo"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <Button
+            android:id="@+id/HandlerDemo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="31dp"
+            android:onClick="HandlerDemo"
+            android:text="HandlerDemo" />
+
+        <Button
+            android:id="@+id/ServiceDemo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/HandlerDemo"
+            android:layout_marginTop="10dp"
+            android:onClick="ServiceDemo"
+            android:text="ServiceDemo" />
+
+        <Button
+            android:id="@+id/BroadCastRecevierDemo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/ServiceDemo"
+            android:layout_marginTop="26dp"
+            android:onClick="BroadCastRecevierDemo"
+            android:text="BroadCastRecevierDemo" />
+
+        <Button
+            android:id="@+id/Activity_test_button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/BroadCastRecevierDemo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="28dp"
+            android:onClick="Activitytest"
+            android:text="Activity_test" />
+
+        <Button
+            android:id="@+id/sharepreference_button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/BroadCastRecevierDemo"
+            android:layout_marginTop="91dp"
+            android:onClick="sharepreference"
+            android:text="sharepreference" />
+
+        <Button
+            android:id="@+id/settings_button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sharepreference_button1"
+            android:layout_centerHorizontal="true"
+            android:onClick="settings"
+            android:text="settings" />
+
+        <Button
+            android:id="@+id/savepasswd_button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/settings_button1"
+            android:layout_centerHorizontal="true"
+            android:onClick="savepasswd"
+            android:text="记住密码" />
+
+        <Button
+            android:id="@+id/savefile_button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/savepasswd_button1"
+            android:layout_centerHorizontal="true"
+            android:onClick="savefile"
+            android:text="文件保存" />
+
+        <Button
+            android:id="@+id/create_database_button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/savefile_button1"
+            android:layout_centerHorizontal="true"
+            android:onClick="createdatabase"
+            android:text="创建数据库" />
+
+        <Button
+            android:id="@+id/add_data_button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/create_database_button1"
+            android:layout_centerHorizontal="true"
+            android:onClick="AddData"
+            android:text="增加数据" />
+
+        <Button
+            android:id="@+id/update_data_button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/add_data_button1"
+            android:layout_centerHorizontal="true"
+            android:onClick="UpdateData"
+            android:text="修改数据" />
+
+        <Button
+            android:id="@+id/delete_data_button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/update_data_button1"
+            android:layout_centerHorizontal="true"
+            android:onClick="DeleteData"
+            android:text="删除数据" />
+
+        <Button
+            android:id="@+id/query_data_button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/delete_data_button1"
+            android:layout_centerHorizontal="true"
+            android:onClick="QueryData"
+            android:text="查询数据" />
+
+        <Button
+            android:id="@+id/replace_data_button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/query_data_button1"
+            android:layout_centerHorizontal="true"
+            android:onClick="ReplaceData"
+            android:text="替换数据" />
+    </RelativeLayout>
+
+</ScrollView>

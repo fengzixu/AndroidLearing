@@ -1,0 +1,7 @@
+package com.demo.broadcast.test;
+
+import com.demo.activity.BaseActivity;
+
+public class nextActivity extends BaseActivity {
+
+}

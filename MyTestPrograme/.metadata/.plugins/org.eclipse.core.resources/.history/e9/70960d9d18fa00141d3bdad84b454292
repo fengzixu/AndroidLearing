@@ -1,0 +1,38 @@
+package com.demo.DataBase;
+
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+
+//自己实现helper类的功能
+public class DataStorageHelper {
+
+	private Context mContext;
+	private SQLiteDatabase mDatabase;
+	private final String TABLE_NAME = "userinfo";
+
+	public DataStorageHelper(Context mcontext) {
+
+		mContext = mcontext;
+	}
+
+	public void CreateDataBase() {
+
+		// 创建或者打开一个数据库
+		mDatabase = mDatabase.openOrCreateDatabase("user", null);
+	}
+
+	public void CreateTable() {
+
+		mDatabase.execSQL("create table " + TABLE_NAME
+				+ " ( id integer PRIMARY KEY AUTOINCREMENT," + "name text,"
+				+ "address text," + "age integer);");
+
+	}
+	
+	public void InsertData(UserInfo user){
+		
+		mDatabase.execSQL("insert into userinfo (name,address,age) values(?,?,?)", new String[]{user.getName(),user.getAddress(),user.getAge()+""});
+		
+	}
+
+}

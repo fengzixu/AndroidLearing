@@ -1,7 +1,0 @@
-package com.demo.Data;
-
-import android.preference.PreferenceActivity;
-
-public class Settings extends PreferenceActivity {
-
-}

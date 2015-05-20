@@ -1,0 +1,22 @@
+package com.demo.broadcast.test;
+
+import android.os.Bundle;
+
+import com.demo.activity.BaseActivity;
+import com.example.androiddemo.R;
+
+public class LoginActivity extends BaseActivity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.layout_save_login);
+	}
+	
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+	}
+}
