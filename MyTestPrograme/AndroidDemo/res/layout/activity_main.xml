@@ -140,6 +140,14 @@
             android:layout_centerHorizontal="true"
             android:onClick="Demoreciver2"
             android:text="强制下线" />
+                                <Button
+            android:id="@+id/demo_provider_button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/demo_reciver_button2"
+            android:layout_centerHorizontal="true"
+            android:onClick="DemoProvider"
+            android:text="读取通讯录信息" />
         <Button
             android:id="@+id/ServiceDemo"
             android:layout_width="match_parent"

@@ -9,13 +9,13 @@ import android.widget.Toast;
 public class MySqliteHelper extends SQLiteOpenHelper {
 
 	public static final String CREATE_BOOK = "create table book (" + 
-						"id integer primary key autoincrement," + 
+						"_id integer primary key autoincrement," + 
 						"author text," +
 						"price real," + 
 						"pages integer," + 
 						"name text)";
 	public static final String CREATE_CATEGORY = "create table category ("
-						+ "id integer primary key autoincrement,"
+						+ "_id integer primary key autoincrement,"
 						+ "category_name text,"
 						+ "category_code integer)";
 	
@@ -35,7 +35,7 @@ public class MySqliteHelper extends SQLiteOpenHelper {
 		//把目前最新数据库的创建都要放在oncreate函数中
 		db.execSQL(CREATE_BOOK);
 		//db.execSQL(CREATE_CATEGORY);
-		Toast.makeText(mContext,"table created succeed",2000).show();
+		//Toast.makeText(mContext,"table created succeed",2000).show();
 	}
 
 	@Override

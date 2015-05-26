@@ -1,0 +1,74 @@
+package com.demo.provider;
+
+import com.demo.DataBase.MySqliteHelper;
+
+import android.content.ContentProvider;
+import android.content.ContentValues;
+import android.content.UriMatcher;
+import android.database.Cursor;
+import android.net.Uri;
+
+public class CustomProvider extends ContentProvider {
+
+	
+	private static final int BOOK_DIR = 0;
+	private static final int BOOK_ITEM = 1;
+	private static final int CATEGORY_DIR = 2;
+	private static final int CATEGORY_ITEM = 3;
+	public static final String AUTHORITY = "com.demo.provider.provider";
+	private static UriMatcher urimatcher;
+	
+	private MySqliteHelper mySqliteHelper;
+	
+	static {
+		
+		urimatcher = new UriMatcher(UriMatcher.NO_MATCH);
+		urimatcher.addURI(AUTHORITY, "book", BOOK_DIR);
+		urimatcher.addURI(AUTHORITY, "book/#", BOOK_ITEM);
+		urimatcher.addURI(AUTHORITY, "category", CATEGORY_DIR);
+		urimatcher.addURI(AUTHORITY, "category/#", CATEGORY_ITEM);
+	}
+	
+	
+	@Override
+	public boolean onCreate() {
+		// TODO Auto-generated method stub
+		
+		mySqliteHelper = new MySqliteHelper(getContext(), "bookstore.db", null, 1); 
+		
+		return false;
+	}
+
+	@Override
+	public Cursor query(Uri uri, String[] projection, String selection,
+			String[] selectionArgs, String sortOrder) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getType(Uri uri) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Uri insert(Uri uri, ContentValues values) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int delete(Uri uri, String selection, String[] selectionArgs) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int update(Uri uri, ContentValues values, String selection,
+			String[] selectionArgs) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

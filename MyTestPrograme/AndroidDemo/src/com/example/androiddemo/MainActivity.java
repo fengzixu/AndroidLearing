@@ -9,6 +9,7 @@ import com.demo.DataBase.MySqliteHelper;
 import com.demo.activity.BaseActivity;
 import com.demo.broadcast.test.LoginActivity;
 import com.demo.handler.HandlerActivity;
+import com.demo.provider.SystemContentProvider;
 import com.demo.reciver.Verson1;
 import com.demo.service.MainServiceActivity;
 import com.demo.service.ServiceActivitySecond;
@@ -109,7 +110,11 @@ public class MainActivity extends Activity {
 		mintent.setClass(this, LoginActivity.class);
 		startActivity(mintent);
 	}
-	
+	public void DemoProvider(View view){
+		Intent mIntent = new Intent();
+		mIntent.setClass(this, SystemContentProvider.class);
+		startActivity(mIntent);
+	}
 	public void createdatabase(View view) {
 
 		mySqliteHelper.getWritableDatabase();

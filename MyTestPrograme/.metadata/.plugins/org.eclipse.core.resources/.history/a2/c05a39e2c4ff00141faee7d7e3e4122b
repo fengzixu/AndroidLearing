@@ -1,0 +1,87 @@
+package com.demo.provider;
+
+import android.content.ContentProvider;
+import android.content.ContentValues;
+import android.content.UriMatcher;
+import android.database.Cursor;
+import android.net.Uri;
+
+public class MyContentProvider extends ContentProvider {
+
+	private static final int table_dir1 = 0;
+	private static final int table_dir1_item = 1;
+	private static final int table_dir2 = 2;
+	private static final int table_dir2_item = 3;
+	private static UriMatcher matcher;
+	static{
+		matcher = new UriMatcher(UriMatcher.NO_MATCH);
+		
+		matcher.addURI("com.demo.androiddemo", "table1", table_dir1);
+		matcher.addURI("com.demo.androiddemo", "table1/#", table_dir1_item);
+		matcher.addURI("com.demo.androiddemo", "table2", table_dir2);
+		matcher.addURI("com.demo.androiddemo", "table2/#", table_dir2_item);
+	}
+	
+	@Override
+	public boolean onCreate() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Cursor query(Uri uri, String[] projection, String selection,
+			String[] selectionArgs, String sortOrder) {
+		// TODO Auto-generated method stub
+		switch(matcher.match(uri)){
+		
+		case table_dir1: /*获取table1表内全部数据*/ ;break;
+		case table_dir1_item: /*获取table1表内单条数据*/ ;break;
+		case table_dir2: /*获取table2表内全部数据*/ ;break;
+		case table_dir2_item: /*获取table2表内单条数据*/ ;break;		
+		}
+		
+		
+		return null;
+	}
+
+	@Override
+	public String getType(Uri uri) {
+		// TODO Auto-generated method stub
+		
+		
+		switch(matcher.match(uri)){
+		
+		case table_dir1: return "vnd.android.cursor.dir/vnd.android.demo.androiddemo.provider.table1";break;
+		case table_dir1_item:return"vnd.android.cursor.item/vnd.android.demo.androiddemo.provider.table1";break;
+		case table_dir2: return "vnd.android.cursor.dir/vnd.android.demo.androiddemo.provider.table2";break;
+		case table_dir2_item:return"vnd.android.cursor.item/vnd.android.demo.androiddemo.provider.table2";break;			
+		}
+		
+		return null;
+	}
+
+	private void switch(int match) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Uri insert(Uri uri, ContentValues values) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int delete(Uri uri, String selection, String[] selectionArgs) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int update(Uri uri, ContentValues values, String selection,
+			String[] selectionArgs) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

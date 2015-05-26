@@ -1,0 +1,50 @@
+package com.example.providertest;
+
+import android.app.Activity;
+import android.content.ContentResolver;
+import android.content.ContentValues;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+
+public class MainActivity extends Activity {
+
+	private Button insert_data;
+	private Button delete_data;
+	private Button update_data;
+	private Button query_data;
+	private ContentResolver mContentResolver;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        
+        insert_data = (Button)findViewById(R.id.button1);
+        delete_data = (Button)findViewById(R.id.button2);
+        update_data = (Button)findViewById(R.id.button3);
+        query_data = (Button)findViewById(R.id.button4);
+        mContentResolver = getContentResolver();
+        
+        
+        insert_data.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+				Uri mUri = Uri.parse("content://com.example.androiddemo.provider/book");
+				ContentValues mContentValues;
+				mContentValues.put("author", "erxuan");
+				mContentValues.put("pages", 20);
+				mContentValues.put("name", "jinpingmei")
+				mContentResolver.insert(url, values)
+				
+			}
+		});
+        
+        
+    }
+}

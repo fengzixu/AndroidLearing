@@ -1,0 +1,32 @@
+package com.demo.provider;
+
+import java.util.List;
+
+import com.example.androiddemo.R;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+public class SystemContentProvider extends Activity {
+
+	private ListView mListView;
+	private ArrayAdapter<String> mAdapter;
+	private List<String> itemresouce;
+	
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.layout_contentprovider);
+		
+		
+		
+	}
+	
+	public void getData(){
+		
+	}
+}

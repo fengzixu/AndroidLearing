@@ -1,0 +1,165 @@
+package com.demo.provider;
+
+import com.demo.DataBase.MySqliteHelper;
+
+import android.content.ContentProvider;
+import android.content.ContentValues;
+import android.content.UriMatcher;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
+
+public class CustomProvider extends ContentProvider {
+
+	
+	private static final int BOOK_DIR = 0;
+	private static final int BOOK_ITEM = 1;
+	private static final int CATEGORY_DIR = 2;
+	private static final int CATEGORY_ITEM = 3;
+	public static final String AUTHORITY = "com.demo.provider.CustomProvider.provider";
+	private static UriMatcher urimatcher;
+	
+	private MySqliteHelper mySqliteHelper;
+	
+	static {
+		
+		urimatcher = new UriMatcher(UriMatcher.NO_MATCH);
+		urimatcher.addURI(AUTHORITY, "book", BOOK_DIR);
+		urimatcher.addURI(AUTHORITY, "book/#", BOOK_ITEM);
+		urimatcher.addURI(AUTHORITY, "category", CATEGORY_DIR);
+		urimatcher.addURI(AUTHORITY, "category/#", CATEGORY_ITEM);
+	}
+	
+	
+	@Override
+	public boolean onCreate() {
+		// TODO Auto-generated method stub
+		
+		mySqliteHelper = new MySqliteHelper(getContext(), "bookstore.db", null, 1); 
+		
+		return true;
+	}
+
+	@Override
+	public Cursor query(Uri uri, String[] projection, String selection,
+			String[] selectionArgs, String sortOrder) {
+		// TODO Auto-generated method stub
+		
+		Cursor mCursor = null;
+		SQLiteDatabase database = mySqliteHelper.getReadableDatabase();
+		switch(urimatcher.match(uri)){
+		
+		case BOOK_DIR: 
+			mCursor = database.query("book", projection, selection, selectionArgs, null, null, sortOrder);
+			break;
+		case BOOK_ITEM:
+			String bookid = uri.getPathSegments().get(1);
+			String tablename = uri.getPathSegments().get(0);
+			mCursor = database.query("book", projection, "_id = ?", new String[]{bookid}, null, null, sortOrder);
+			break;
+		case CATEGORY_DIR:
+			mCursor = database.query("category", projection, selection, selectionArgs, null, null, sortOrder);
+			break;
+		case CATEGORY_ITEM:
+			String categoryid = uri.getPathSegments().get(1);
+			mCursor = database.query("category", projection, "_id = ?", new String[]{categoryid}, null, null, sortOrder);
+			break;
+		default:
+			return null;
+			
+		
+		}
+		return mCursor;
+	}
+
+	@Override
+	public String getType(Uri uri) {
+		// TODO Auto-generated method stub
+		switch(urimatcher.match(uri)){
+		
+		case BOOK_DIR: return "vnd.android.cursor.dir/vnd.com.demo.provider.CustomProvider.provider.book";
+		case BOOK_ITEM:return"vnd.android.cursor.item/vnd.com.demo.provider.CustomProvider.provider.book";
+		case CATEGORY_DIR: return "vnd.android.cursor.dir/vnd.com.demo.provider.CustomProvider.provider.category";
+		case CATEGORY_ITEM:return"vnd.android.cursor.item/vnd.com.demo.provider.CustomProvider.provider.category";			
+		}
+		return null;
+	}
+
+	@Override
+	public Uri insert(Uri uri, ContentValues values) {
+		// TODO Auto-generated method stub
+		
+		Cursor mCursor = null;
+		Uri urireturn = null;
+		SQLiteDatabase mDatabase = mySqliteHelper.getWritableDatabase();
+		switch(urimatcher.match(uri)){
+		case BOOK_ITEM:
+		case BOOK_DIR: 
+			long newbookid = mDatabase.insert("book", null, values);
+			urireturn = uri.parse("content://"+AUTHORITY+"/book/" + newbookid);
+			break;
+		case CATEGORY_ITEM:
+		case CATEGORY_DIR:
+			long newcategoryid = mDatabase.insert("category", null, values);
+			urireturn = Uri.parse("content://"+AUTHORITY+"/category/"+newcategoryid);
+			break;
+		default:break;
+		}
+		
+		return urireturn;
+	}
+
+	@Override
+	public int delete(Uri uri, String selection, String[] selectionArgs) {
+		// TODO Auto-generated method stub
+		int rowdelete = 0;
+		SQLiteDatabase mDatabase = mySqliteHelper.getWritableDatabase();
+		switch(urimatcher.match(uri)){
+		case BOOK_DIR: 
+			rowdelete = mDatabase.delete("book", selection, selectionArgs);
+			break;
+		case BOOK_ITEM:
+			String bookid = uri.getPathSegments().get(1);
+			rowdelete = mDatabase.delete("book", "_id = ?", new String[]{bookid});
+			break;
+		case CATEGORY_ITEM:
+			String categoryid = uri.getPathSegments().get(1);
+			rowdelete = mDatabase.delete("category", "_id = ?", new String[]{categoryid});
+			break;
+		case CATEGORY_DIR:
+			rowdelete = mDatabase.delete("category", selection, selectionArgs);
+			break;
+		default:break;
+		}
+		
+		return rowdelete;
+	}
+
+	@Override
+	public int update(Uri uri, ContentValues values, String selection,
+			String[] selectionArgs) {
+		// TODO Auto-generated method stub
+		int updaterows = 0;
+		SQLiteDatabase mDatabase = mySqliteHelper.getWritableDatabase();
+		switch(urimatcher.match(uri)){
+		case BOOK_DIR: 
+			updaterows = mDatabase.update("book", values, selection, selectionArgs);
+			break;
+		case BOOK_ITEM:
+			String bookid = uri.getPathSegments().get(1);
+			updaterows = mDatabase.update("book", values, "_id = ?", new String[]{bookid});
+			break;
+		case CATEGORY_ITEM:
+			String categoryid = uri.getPathSegments().get(1);
+			updaterows = mDatabase.update("category", values, "_id = ?", new String[]{categoryid});
+			break;
+		case CATEGORY_DIR:
+			updaterows = mDatabase.update("category", values, selection, selectionArgs);
+			break;
+		default:break;
+		}
+		
+		return updaterows;
+	}
+
+}
