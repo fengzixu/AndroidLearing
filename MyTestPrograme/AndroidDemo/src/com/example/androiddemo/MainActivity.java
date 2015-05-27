@@ -13,6 +13,7 @@ import com.demo.provider.SystemContentProvider;
 import com.demo.reciver.Verson1;
 import com.demo.service.MainServiceActivity;
 import com.demo.service.ServiceActivitySecond;
+import com.demo.yibu.NewHandlerActivity;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -119,7 +120,11 @@ public class MainActivity extends Activity {
 
 		mySqliteHelper.getWritableDatabase();
 	}
-
+	public void DemoNewHandler(View view){
+		Intent mIntent = new Intent();
+		mIntent.setClass(this, NewHandlerActivity.class);
+		startActivity(mIntent);
+	}
 	public void AddData(View view) {
 
 		// 得到管理数据库的实例对象

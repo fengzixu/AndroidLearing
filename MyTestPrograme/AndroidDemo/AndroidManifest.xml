@@ -33,6 +33,7 @@
         <activity android:name="com.demo.Data.SaveLogin"></activity>
         <activity android:name="com.demo.activity.BaseActivity" >
         </activity>
+        <activity android:name="com.demo.yibu.MutityHandler"></activity>
         <receiver android:name="com.demo.reciver.BootCompleteReceiver">
             <intent-filter>
                 <action android:name="com.demo.sendorder"/>
@@ -54,6 +55,7 @@
         <provider android:name="com.demo.provider.CustomProvider" android:authorities="com.example.androiddemo.provider" android:exported="true">
             
         </provider>
+        <activity android:name="com.demo.yibu.NewHandlerActivity"></activity>
         <activity android:name="com.demo.broadcast.test.BaseActivity"></activity>
         <activity android:name="com.demo.broadcast.test.LoginActivity"></activity>
         <activity android:name="com.demo.broadcast.test.nextActivity"></activity>

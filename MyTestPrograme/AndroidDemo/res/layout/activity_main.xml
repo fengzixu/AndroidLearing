@@ -148,6 +148,14 @@
             android:layout_centerHorizontal="true"
             android:onClick="DemoProvider"
             android:text="读取通讯录信息" />
+                                                                <Button
+            android:id="@+id/demo_newhandler_button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/demo_provider_button2"
+            android:layout_centerHorizontal="true"
+            android:onClick="DemoNewHandler"
+            android:text="异步消息实例" />
         <Button
             android:id="@+id/ServiceDemo"
             android:layout_width="match_parent"

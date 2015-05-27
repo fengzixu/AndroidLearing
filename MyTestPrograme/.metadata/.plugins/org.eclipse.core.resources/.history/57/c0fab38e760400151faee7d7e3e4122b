@@ -1,0 +1,53 @@
+package com.demo.yibu;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.Looper;
+import android.os.Message;
+import android.util.Log;
+
+import com.example.androiddemo.R;
+
+public class MutityHandler extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.layout_mutityhandle);
+		
+		Log.i("xuran", "main thread " + Thread.currentThread().getId());
+		
+		HandlerThread mHandlerThread = new HandlerThread("handle_thread");
+		
+		
+		
+	}
+	
+	//重新实现一个Handler，这个handler不和其所在线程的looper绑定，而是和新实现的handlerthread
+	//通过start方法的调用开启的新线程所拥有的looper绑定，以后通过Handler发送和处理消息的逻辑，都不在主线程中，
+	//而是在新开启的线程中完成
+	class myhandler extends Handler{
+
+		public myhandler(){
+			
+		}
+		
+		
+		public myhandler(Looper mLooper){
+			
+			super(mLooper);
+		}
+		
+		
+		@Override
+		public void handleMessage(Message msg) {
+			// TODO Auto-generated method stub
+			super.handleMessage(msg);
+		}
+		
+		
+	}
+}

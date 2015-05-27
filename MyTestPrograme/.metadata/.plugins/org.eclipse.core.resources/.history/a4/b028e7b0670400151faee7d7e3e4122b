@@ -1,0 +1,57 @@
+package com.demo.yibu;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.Toast;
+
+import com.example.androiddemo.R;
+
+public class NewHandlerActivity extends Activity {
+
+	private Button start;
+	private Button end;
+	
+	
+	private Handler mHandler = new Handler();
+	
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.layout_newhandler);
+		
+		start = (Button)findViewById(R.id.start_handler_button1);
+		end = (Button)findViewById(R.id.start_handler_button2);
+		
+		start.setOnClickListener(new starthandlerListener());
+		
+	}
+	
+	class starthandlerListener implements OnClickListener{
+
+		@Override
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			
+		mHandler.post(mRunnable);
+			
+		}
+		
+	}
+	
+	Runnable mRunnable = new Runnable() {
+		
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			//Toast.makeText(NewHandlerActivity.this, "this is runnable running", 2000).show();
+			Log.i("xuran", "this is runnable running");
+		}
+	};
+}
